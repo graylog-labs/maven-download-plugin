@@ -31,6 +31,4 @@ jobs:
         MAVEN_OPTS: >
           -DtrimStackTrace=false
           -Djansi.force=true
-        MAVEN_ARGS: >
-          --batch-mode --fail-fast --no-transfer-progress --show-version
-      run: mvn verify -Pits --file pom.xml
+      run: mvn -B -ntp -ff -V verify -Pits --file pom.xml
