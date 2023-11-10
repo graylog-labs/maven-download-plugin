@@ -15,9 +15,10 @@
  */
 package com.googlecode.download.maven.plugin.internal;
 
-import java.net.URI;
-
 import org.apache.maven.plugin.logging.Log;
+
+import java.io.File;
+import java.net.URI;
 
 /**
  * {@link ProgressReport} implementation that logs operation progress at INFO priority.
@@ -29,13 +30,15 @@ public final class LoggingProgressReport implements ProgressReport {
     private static final char B_UNIT = 'b';
 
     private final Log log;
+    private final File outputFile;
 
     private char unit;
     private long total;
     private long completed;
 
-    public LoggingProgressReport(Log log) {
+    public LoggingProgressReport(Log log, File outputFile) {
         this.log = log;
+        this.outputFile = outputFile;
     }
 
     @Override
@@ -43,7 +46,7 @@ public final class LoggingProgressReport implements ProgressReport {
         this.total = total;
         this.completed = 0L;
         this.unit = total >= KBYTE ? K_UNIT : B_UNIT;
-        log.info(String.format( "%s: %s", "Downloading", uri));
+        log.info(String.format("%s: %s to %s", "Downloading", uri, outputFile.getAbsolutePath()));
     }
 
     @Override

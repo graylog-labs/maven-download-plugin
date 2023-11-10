@@ -576,7 +576,7 @@ public class WGet extends AbstractMojo {
             final HttpFileRequester fileRequester = new HttpFileRequester(
                 httpClient,
                 this.session.getSettings().isInteractiveMode() ?
-                    new LoggingProgressReport(getLog()) : new SilentProgressReport(getLog()));
+                    new LoggingProgressReport(getLog(), outputFile) : new SilentProgressReport(getLog()));
 
             final HttpClientContext clientContext = HttpClientContext.create();
             clientContext.setRequestConfig(requestConfig);
