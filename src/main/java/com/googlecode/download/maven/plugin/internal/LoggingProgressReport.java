@@ -58,7 +58,7 @@ public final class LoggingProgressReport implements ProgressReport {
             totalInUnits = total == -1 ? "?" : Long.toString(total);
             completedInUnits = completed;
         }
-        log.info(String.format("%d/%s", completedInUnits, totalInUnits));
+        log.debug(String.format("%d/%s", completedInUnits, totalInUnits));
     }
 
     @Override
