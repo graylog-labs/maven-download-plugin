@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<!-- Build description -->
-	<groupId>com.googlecode.maven-download-plugin</groupId>
+	<groupId>org.graylog.repackaged.siddhi</groupId>
 	<artifactId>download-maven-plugin</artifactId>
 	<packaging>maven-plugin</packaging>
-	<version>1.6.8</version>
+	<version>1.6.8.1-SNAPSHOT</version>
 	<name>Download Plugin for Maven</name>
 	<!-- See https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide -->
 	<parent>
@@ -292,7 +292,7 @@
 	<distributionManagement>
 		<site>
 			<id>maven-download-plugin</id>
-			<url>scm:git:ssh://git@github.com/maven-download-plugin/maven-download-plugin.git</url>
+			<url>scm:git:ssh://git@github.com/graylog-labs/maven-download-plugin.git</url>
 		</site>
 	</distributionManagement>
 	<!-- Miscellaneous build properties (SCM, license, issues, etc) -->
@@ -302,7 +302,7 @@
 		downloading a maven artifact from the command line. Future version of
 		the plugin could include web download, ftp download, scp download and
 		so on. </description>
-	<url>https://github.com/maven-download-plugin/maven-download-plugin</url>
+	<url>https://github.com/graylog-labs/maven-download-plugin</url>
 	<developers>
 		<developer>
 			<id>mhoule</id>
@@ -327,7 +327,7 @@
 	<inceptionYear>2009</inceptionYear>
 	<issueManagement>
 		<system>GitHub</system>
-		<url>https://github.com/maven-download-plugin/maven-download-plugin/issues</url>
+		<url>https://github.com/graylog-labs/maven-download-plugin/issues</url>
 	</issueManagement>
 	<licenses>
 		<license>
@@ -338,18 +338,18 @@
 	</licenses>
 	<scm>
 		<connection>
-			scm:git:git://github.com/maven-download-plugin/maven-download-plugin.git
+			scm:git:git://github.com/graylog-labs/maven-download-plugin.git
 		</connection>
 		<developerConnection>
-			scm:git:ssh://git@github.com/maven-download-plugin/maven-download-plugin.git
+			scm:git:ssh://git@github.com/graylog-labs/maven-download-plugin.git
 		</developerConnection>
-		<url>https://github.com/maven-download-plugin/maven-download-plugin</url>
+		<url>https://github.com/graylog-labs/maven-download-plugin</url>
 	</scm>
 	<prerequisites>
 		<maven>2.0</maven>
 	</prerequisites>
 	<organization>
 		<name>Open-Source</name>
-		<url>https://github.com/maven-download-plugin/maven-download-plugin</url>
+		<url>https://github.com/graylog-labs/maven-download-plugin</url>
 	</organization>
 </project>
