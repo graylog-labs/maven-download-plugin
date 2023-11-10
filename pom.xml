@@ -14,6 +14,8 @@
 	</parent>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<maven.site.skip>true</maven.site.skip>
 	</properties>
 	<!-- Build plugins and extensions -->
 	<build>
