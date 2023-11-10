@@ -14,6 +14,7 @@
 	</parent>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<gpg.keyname></gpg.keyname> <!-- Set when invoking maven for releases -->
 	</properties>
 	<!-- Build plugins and extensions -->
 	<build>
@@ -50,6 +51,35 @@
 					<!-- During release:perform, enable the "release" profile -->
 					<releaseProfiles>release</releaseProfiles>
 					<goals>deploy site:site site:deploy</goals>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>3.0.1</version>
+				<configuration>
+					<keyname>${gpg.keyname}</keyname>
+				</configuration>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.13</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>sonatype-nexus-staging</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+					<autoDropAfterRelease>true</autoDropAfterRelease>
 				</configuration>
 			</plugin>
 		</plugins>
